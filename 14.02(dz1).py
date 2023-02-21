@@ -128,6 +128,8 @@ def avg_grades_students_on_course(course):
                 res += sum(student.grades[course]) / len(student.grades[course])
                 count += 1
 
+    return round(res / count, 2)
+
 
 def avg_grades_lectors_on_course(course):
     res = 0
@@ -155,35 +157,45 @@ if __name__ == '__main__':
     r = Lecturer('Mergen', 'Modunkaev')
     r.courses_attached += ['Python', 'Java']
 
-    z.rate_hw(a, 'Python', 10)
     z.rate_hw(k, 'Python', 1)
     z.rate_hw(k, 'Python', 7)
     z.rate_hw(k, 'Python', 8)
-    z.rate_hw(a, 'Python', 3)
+    z.rate_hw(k, 'Java', 4)
+    z.rate_hw(k, 'Java', 8)
+    z.rate_hw(k, 'Java', 10)
+
     z.rate_hw(a, 'Python', 2)
+    z.rate_hw(a, 'Python', 3)
+    z.rate_hw(a, 'Python', 10)
     z.rate_hw(a, 'Java', 10)
+    z.rate_hw(a, 'Java', 6)
+    z.rate_hw(a, 'Java', 8)
+
     a.evaluation_of_teachers(p, 'Python', 10)
     a.evaluation_of_teachers(p, 'Python', 7)
     a.evaluation_of_teachers(p, 'Python', 3)
     a.evaluation_of_teachers(p, 'Java', 6)
+    a.evaluation_of_teachers(p, 'Java', 5)
+    a.evaluation_of_teachers(p, 'Java', 8)
 
     a.evaluation_of_teachers(r, 'Python', 9)
     a.evaluation_of_teachers(r, 'Python', 3)
     a.evaluation_of_teachers(r, 'Python', 6)
     a.evaluation_of_teachers(r, 'Java', 2)
     a.evaluation_of_teachers(r, 'Java', 5)
+    a.evaluation_of_teachers(r, 'Java', 6)
+
     # print(r.avg_lectors_grade())
     # print(a.avg_student_grade())
 
-    print(avg_grades_lectors_on_course('Python'))
-    # m = Lecturer.all_lectors
-    # print(*m)
-    # # var = r > p
-    # # print(p)
-    # # print(a)
-    # # print(p.__dict__)
-    # # print(a.__dict__)
-    # #
-    # # print(Student.all_students)
+    # print(avg_grades_students_on_course('Python'))
+    # print(avg_grades_lectors_on_course('Java'))
+    # var = r > p
+    # print(p)
+    # print(a)
+    # print(p.__dict__)
+    # print(a.__dict__)
+    #
+    # print(Student.all_students)
     # print(avg_grades_students_on_course('Python'))
     # print(a.grades)
